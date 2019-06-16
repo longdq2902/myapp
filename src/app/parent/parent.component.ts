@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { ChildComponent } from '../child/child.component';
 
 @Component({
   selector: 'app-parent',
@@ -7,17 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ParentComponent implements OnInit {
 
-  value = 0;
+  @ViewChild(ChildComponent, { static: false })
+  myChild: ChildComponent;
+
   constructor() { }
 
   ngOnInit() {
   }
-
-  changeVal(isAdd: boolean) {
-    if (isAdd)
-      this.value = this.value + 1;
-    else
-      this.value = this.value - 1;
+  addToChild() {
+    this.myChild.value = this.myChild.value + 1;
+    console.log(this.myChild.value);
   }
+
 
 }
