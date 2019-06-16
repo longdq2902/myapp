@@ -17,6 +17,7 @@ export class ParentComponent implements OnInit {
   }
   addToChild() {
     this.myChild.value = this.myChild.value + 1;
+    console.log(this.myChild.value);
   }
 
 
