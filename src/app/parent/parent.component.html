@@ -1,2 +1,6 @@
 <h3> {{ value }}</h3>
-<app-child (myClick) = "changeVal($event)"></app-child>
+<!-- <app-child (myClick) = "changeVal($event)"></app-child> -->
+<!-- <button (click) = "child.value = child.value +1">Add for child</button> -->
+<button (click) = 'addToChild()'>Add for child</button>
+
+<app-child  ></app-child> 

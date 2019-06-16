@@ -1,5 +1,4 @@
 import { Component, OnInit, Output ,EventEmitter} from '@angular/core';
-//import { EventEmitter } from 'events';
 
 @Component({
   selector: 'app-child',
@@ -8,21 +7,14 @@ import { Component, OnInit, Output ,EventEmitter} from '@angular/core';
 })
 export class ChildComponent implements OnInit {
 
-  @Output() myClick = new EventEmitter<boolean>();
-  @Output() removePerson = new EventEmitter<String>();
+ value =0;
+
   constructor() { }
 
   ngOnInit() {
   }
 
-  addToParent(){
-    this.myClick.emit(true);
-  }
-  subFromParent(){
-    this.myClick.emit(false);
-  }
-  deletePerson(name:string){
-    this.removePerson.emit(name);
-  }
+  
+ 
 
 }
